@@ -1,0 +1,21 @@
+const express = require('express');
+const path = require('path');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+
+app.post('/api/message', (req, res) => {
+  const userMessage = req.body.message || '';
+  // Placeholder AI logic (replace with ElevenLabs API)
+  let botResponse = 'Hello! I am your AI assistant. (You can connect me to ElevenLabs later.)';
+  if (userMessage.toLowerCase().includes('hello')) {
+    botResponse = 'Hi! How can I help you today?';
+  }
+  res.json({ response: botResponse });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});

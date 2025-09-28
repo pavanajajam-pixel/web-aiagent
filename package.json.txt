@@ -1,0 +1,12 @@
+{
+  "name": "ai-agent-chatbot",
+  "version": "1.0.0",
+  "description": "Collaborative AI agent chatbot website.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
